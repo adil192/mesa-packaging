@@ -397,6 +397,13 @@ _EOF
 # ensure standard Rust compiler flags are set
 export RUSTFLAGS="%build_rustflags"
 
+%ifarch x86_64
+# Build for modern CPUs.
+export CFLAGS="%{optflags} -march=x86-64-v3"
+export CXXFLAGS="%{optflags} -march=x86-64-v3"
+export RUSTFLAGS="$RUSTFLAGS -Ctarget-cpu=x86-64-v3"
+%endif
+
 %if 0%{?with_nvk}
 # So... Meson can't actually find them without tweaks
 %if !0%{?vendor_nvk_crates}
