@@ -307,7 +307,7 @@ Provides:       libgbm-devel%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %package libOpenCL
 Summary:        Mesa OpenCL runtime library
 Requires:       (ocl-icd%{?_isa} or OpenCL-ICD-Loader%{?_isa})
-Requires:       libclc22%{?_isa}
+Requires:       (libclc22%{?_isa} or (libclc%{?_isa} >= 22 with libclc%{?_isa} < 23))
 Requires:       %{name}-libgbm%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 Requires:       opencl-filesystem
 
