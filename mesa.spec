@@ -81,7 +81,7 @@
 Name:           mesa
 Summary:        Mesa graphics libraries
 Version:        26.2.2
-Release:        7%{dist}
+Release:        8%{dist}
 License:        MIT AND BSD-3-Clause AND SGI-B-2.0
 URL:            https://mesa3d.org
 
@@ -306,12 +306,7 @@ Provides:       libgbm-devel%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 %package libOpenCL
 Summary:        Mesa OpenCL runtime library
 Requires:       (ocl-icd%{?_isa} or OpenCL-ICD-Loader%{?_isa})
-%if 0%{?fedora} && 0%{?fedora} < 46
-# Separate `libclc22` isn't released yet: https://bodhi.fedoraproject.org/updates/FEDORA-2026-06a5023802
-Requires:       libclc%{?_isa} >= 22, libclc%{?_isa} < 23
-%else
-Requires:       libclc22%{?_isa}
-%endif
+Requires:       (libclc22%{?_isa} or (libclc%{?_isa} >= 22 with libclc%{?_isa} < 23))
 Requires:       %{name}-libgbm%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 Requires:       opencl-filesystem
 
