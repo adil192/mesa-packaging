@@ -114,9 +114,9 @@ Source14:       https://static.crates.io/crates/unicode-ident/unicode-ident-%{ru
 Source15:       https://static.crates.io/crates/rustc-hash/rustc-hash-%{rustc_hash_ver}.crate
 
 # Open Gaming Collective Patches
-Patch30:        https://raw.githubusercontent.com/OpenGamingCollective/mesa/refs/tags/%{ver}/limiter.patch
-Patch31:        https://raw.githubusercontent.com/OpenGamingCollective/mesa/refs/tags/%{ver}/radv-defaults.patch
-Patch32:        https://raw.githubusercontent.com/OpenGamingCollective/mesa/refs/tags/%{ver}/vram-overcommit.patch
+Patch30:        https://raw.githubusercontent.com/OpenGamingCollective/mesa/refs/tags/26.2.2/limiter.patch
+Patch31:        https://raw.githubusercontent.com/OpenGamingCollective/mesa/refs/tags/26.2.2/radv-defaults.patch
+Patch32:        https://raw.githubusercontent.com/OpenGamingCollective/mesa/refs/tags/26.2.2/vram-overcommit.patch
 
 BuildRequires:  meson >= 1.3.0
 BuildRequires:  gcc
