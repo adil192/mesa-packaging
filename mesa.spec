@@ -116,7 +116,7 @@ Source15:       https://static.crates.io/crates/rustc-hash/rustc-hash-%{rustc_ha
 
 # Open Gaming Collective Patches
 Patch30:        https://raw.githubusercontent.com/OpenGamingCollective/mesa/refs/tags/26.2.4/limiter.patch
-Patch31:        https://raw.githubusercontent.com/OpenGamingCollective/mesa/refs/tags/26.2.4/radv-defaults.patch
+# Patch31:        https://raw.githubusercontent.com/OpenGamingCollective/mesa/refs/tags/26.2.4/radv-defaults.patch
 Patch32:        https://raw.githubusercontent.com/OpenGamingCollective/mesa/refs/tags/26.2.4/vram-overcommit.patch
 
 BuildRequires:  meson >= 1.3.0
