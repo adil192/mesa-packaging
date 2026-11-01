@@ -113,6 +113,12 @@ Source13:       https://static.crates.io/crates/syn/syn-%{rust_syn_ver}.crate
 Source14:       https://static.crates.io/crates/unicode-ident/unicode-ident-%{rust_unicode_ident_ver}.crate
 Source15:       https://static.crates.io/crates/rustc-hash/rustc-hash-%{rustc_hash_ver}.crate
 
+%if 0%{?with_virtio}
+# Taken from https://gitlab.freedesktop.org/mesa/mesa/-/tree/main/subprojects
+%global venus_protocol_ver 1.1.3
+Source20:       https://gitlab.freedesktop.org/virgl/venus-protocol/-/archive/v%{venus_protocol_ver}/venus-protocol-v%{venus_protocol_ver}.tar.gz
+%endif
+
 # Open Gaming Collective Patches
 Patch30:        https://raw.githubusercontent.com/OpenGamingCollective/mesa/refs/tags/26.2.4/limiter.patch
 # Patch31:        https://raw.githubusercontent.com/OpenGamingCollective/mesa/refs/tags/26.2.4/radv-defaults.patch
@@ -390,6 +396,13 @@ _EOF
 %generate_buildrequires
 %cargo_generate_buildrequires
 %endif
+%endif
+
+%if 0%{?with_virtio}
+mkdir -p subprojects/venus-protocol-%{venus_protocol_ver}
+tar -xzf %{SOURCE20} \
+    --strip-components=1 \
+    -C subprojects/venus-protocol-%{venus_protocol_ver}
 %endif
 
 
